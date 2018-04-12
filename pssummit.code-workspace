@@ -4,7 +4,7 @@
 			"path": "."
 		},
 		{
-			"path": "~/.poshbot"
+			"path": "/users/bolin/.poshbot"
 		}
 	]
 }
