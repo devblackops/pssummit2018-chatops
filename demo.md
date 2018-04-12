@@ -18,7 +18,7 @@
 ```text
 !help get-plugin
 !help help
-!help help -examples
+!help get-plugin -examples
 ```
 
 ## Plugins
@@ -44,8 +44,6 @@
 ```text
 !get-helloworld
 !get-helloworld brandon
-hal, help
-bender: status
 ```
 
 ### Event
@@ -65,6 +63,7 @@ lgtm shipit!
 
 ```
 !get-multiplethings
+!get-multiplethings -thing1 foo, bar, baz -thing2 42
 ```
 
 ## Errors
@@ -85,6 +84,7 @@ lgtm shipit!
 ```
 !get-randomnumber
 !rnd
+!rand
 ```
 
 ## Permissions / Fileupload / DM
@@ -135,6 +135,10 @@ lgtm shipit!
 ```text
 !deploy-myapp -environment dev
 !approve <id>
+<look at bot config>
+!new-group release
+!add-groupuser release brandolomite
+!approve <id>
 !deploy-myapp -environment prod
 !deny <id>
 ```
@@ -144,23 +148,27 @@ lgtm shipit!
 ```
 > General channel
 !giphy powershell
-> MSPSUG channel
+<look at bot config>
+> PSSummit channel
 !giphy powershell
 ```
 
-## History
+## History / Logging
 
 ```
 !history
-!history <id>
+!history -id <id>
+<look at CommandHistory.log>
 ```
 
 ## Parameter Injection
 
 ```text
-!install-plugin poshbot.wolfram
+!get-plugin poshbot.wolfram
+!help askwolfram
 !askwolfram speed of unladen swallow
 !shorten https://github.com/powershell
+<look at command and bot config>
 ```
 
 ## Stateful Data
@@ -170,7 +178,19 @@ lgtm shipit!
 !setmystuff foo bar
 !getmystuff foo
 !removemystuff -name foo
+```
 
+---
+
+## Extras
+
+## Command Context
+
+```
+!get-commandcontext
+```
+
+```
 !help tictactoe
 !mygames
 !newticktactoe -against brandolomite
@@ -190,7 +210,11 @@ lgtm shipit!
 ```
 !disableplugin nameit -version 1.8.3
 !nameit:noun:1.8.3
+!enableplugin nameit -version 1.8.3
 ```
 
 ## Running as service
 http://docs.poshbot.io/en/latest/guides/run-poshbot-as-a-service/
+
+## Docs
+https://docs.poshbot.io
